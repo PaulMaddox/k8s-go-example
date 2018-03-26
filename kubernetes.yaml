@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: nlb-test
-        image: 860498507463.dkr.ecr.us-west-2.amazonaws.com/nlb-test:0de924c-dirty
+        image: 860498507463.dkr.ecr.us-west-2.amazonaws.com/nlb-test:d7216e0
         ports:
         - containerPort: 8000
         env:

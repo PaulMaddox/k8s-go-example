@@ -23,6 +23,8 @@ publish: tag
 deploy: publish
 	$(call blue, "Deploying to Kubernetes...")
 	sed -i 's/image: .*/image: ${registry}\/${name}:${tag}/g' ${podfile}
+	git add ${podfile}
+	git commit -m 'Updated Kubernetes podfile'
 	kubectl apply -f ${podfile}
 
 run: build
