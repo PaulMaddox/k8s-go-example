@@ -16,6 +16,7 @@ import (
 var url = os.Getenv("URL")
 var successes uint64
 var errors = []string{}
+var errorsToDisplay = 10
 
 func main() {
 
@@ -29,8 +30,8 @@ func main() {
 
 			if err != nil {
 				errors = append(errors, fmt.Sprintf("ERROR: %s", err))
-				if len(errors) > 50 {
-					errors = errors[:50]
+				if len(errors) > errorsToDisplay {
+					errors = errors[:errorsToDisplay]
 				}
 				fmt.Println(0)
 				continue
@@ -38,8 +39,8 @@ func main() {
 
 			if resp.StatusCode != 200 {
 				errors = append(errors, fmt.Sprintf("ERROR: non-200 status code (%d)", resp.StatusCode))
-				if len(errors) > 50 {
-					errors = errors[:50]
+				if len(errors) > errorsToDisplay {
+					errors = errors[:errorsToDisplay]
 				}
 				fmt.Println(0)
 				continue
