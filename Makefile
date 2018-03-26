@@ -25,6 +25,7 @@ deploy: publish
 	sed -i 's/image: .*/image: ${registry}\/${name}:${tag}/g' ${podfile}
 	git add ${podfile}
 	git commit -m 'Updated Kubernetes podfile'
+	git push
 	kubectl apply -f ${podfile}
 
 run: build
