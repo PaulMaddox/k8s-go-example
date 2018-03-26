@@ -32,10 +32,10 @@ spec:
     spec:
       containers:
       - name: nlb-test
-        image: 860498507463.dkr.ecr.us-west-2.amazonaws.com/nlb-test:434c927
+        image: 860498507463.dkr.ecr.us-west-2.amazonaws.com/nlb-test:ed75af9-dirty
         ports:
         - containerPort: 8000
         env:
         - name: URL
-          value: "http://www.bbc.co.uk"
+          value: "http://ae35bcc3f30d911e88672066e78bb0cd-49118c41d965be0f.elb.us-west-2.amazonaws.com"
         
