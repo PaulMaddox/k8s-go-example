@@ -12,7 +12,6 @@ import (
 	"github.com/gorilla/mux"
 )
 
-// var url = "http://ae35bcc3f30d911e88672066e78bb0cd-49118c41d965be0f.elb.us-west-2.amazonaws.com"
 var url = os.Getenv("URL")
 var successes uint64
 var errors = []string{}

@@ -27,7 +27,7 @@ deploy: publish
 	git commit -m 'Updated Kubernetes podfile'
 	git push
 	kubectl apply -f ${podfile}
-
+	
 run: build
 	$(call blue, "Running Docker image locally...")
 	docker run -i -t --rm -P ${name}:latest
