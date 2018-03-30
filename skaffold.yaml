@@ -1,0 +1,17 @@
+apiVersion: skaffold/v1alpha1
+kind: Config
+build:
+  tagPolicy: gitCommit
+  artifacts:
+  - imageName: 860498507463.dkr.ecr.us-west-2.amazonaws.com/nlb-test
+    workspace: .
+  local: {}
+deploy:
+  helm:
+    releases:
+    - name: nlb-test
+      chartPath: deploy/nlb-test
+      namespace: default
+      values:
+        image: 860498507463.dkr.ecr.us-west-2.amazonaws.com/nlb-test
+        
